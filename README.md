@@ -44,18 +44,6 @@ I build practical web products, UI systems, and small tools that make real workf
 
 </div>
 
-## Socials
-
-<div align="center">
-
-[![GitHub](https://img.shields.io/badge/GitHub-RyanVerWey-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/RyanVerWey)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Ryan%20VerWey-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ryan-verwey/)
-[![Website](https://img.shields.io/badge/Website-Echo%20Effect-00B324?style=for-the-badge&logo=googlechrome&logoColor=white)](https://www.echoeffect.net/)
-[![X](https://img.shields.io/badge/X-%40rwverwey-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/rwverwey)
-[![Spotify](https://img.shields.io/badge/Spotify-Artist-1DB954?style=for-the-badge&logo=spotify&logoColor=white)](https://open.spotify.com/artist/1MpvGJUFmEYA5haBQhh8Jq?si=e7EGLEOAQoy2zbT1NshAFw)
-
-</div>
-
 ## Contribution snake
 
 <picture>
