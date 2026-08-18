@@ -252,7 +252,7 @@ def render_svg(totals, public_repo_count, private_repo_count):
   <rect width="{width}" height="{height}" rx="24" fill="url(#panel)"/>
   <rect x="1" y="1" width="{width - 2}" height="{height - 2}" rx="23" stroke="#334155"/>
   <text x="44" y="48" class="eyebrow">LANGUAGE MIX</text>
-  <text x="44" y="88" class="title">{format_number(total_lines)} estimated source lines</text>
+  <text x="44" y="88" class="title">{format_number(total_lines)}</text>
   <text x="{width - 44}" y="72" class="meta" text-anchor="end">{repo_summary}</text>
   <text x="{width - 44}" y="94" class="meta" text-anchor="end">private repos shown as aggregate only - updated {updated}</text>
   <rect x="{chart_x}" y="{chart_y}" width="{chart_w}" height="{chart_h}" rx="8" fill="#1E293B"/>

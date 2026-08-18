@@ -18,7 +18,7 @@
   <rect width="980" height="566" rx="24" fill="url(#panel)"/>
   <rect x="1" y="1" width="978" height="564" rx="23" stroke="#334155"/>
   <text x="44" y="48" class="eyebrow">LANGUAGE MIX</text>
-  <text x="44" y="88" class="title">384,803 estimated source lines</text>
+  <text x="44" y="88" class="title">384,803</text>
   <text x="936" y="72" class="meta" text-anchor="end">16 public + 37 private active repos</text>
   <text x="936" y="94" class="meta" text-anchor="end">private repos shown as aggregate only - updated 2026-08-18 16:27 UTC</text>
   <rect x="44" y="118" width="892" height="26" rx="8" fill="#1E293B"/>
