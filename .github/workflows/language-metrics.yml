@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - name: Checkout profile repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Generate language metrics SVG
         run: python3 .github/scripts/generate_language_metrics.py
