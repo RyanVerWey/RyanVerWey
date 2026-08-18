@@ -18,9 +18,14 @@ jobs:
         uses: actions/checkout@v7
 
       - name: Generate language metrics SVG
-        run: python3 .github/scripts/generate_language_metrics.py
+        run: |
+          if [ -z "$PROFILE_METRICS_TOKEN" ]; then
+            echo "PROFILE_METRICS_TOKEN is not configured; keeping the committed private-inclusive metrics."
+            exit 0
+          fi
+          python3 .github/scripts/generate_language_metrics.py
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PROFILE_METRICS_TOKEN: ${{ secrets.PROFILE_METRICS_TOKEN }}
 
       - name: Commit updated metrics
         run: |

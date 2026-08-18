@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 import json
 import os
-import shutil
 import subprocess
 import tempfile
 import urllib.request
+import urllib.error
+from base64 import b64encode
 from collections import Counter
 from datetime import datetime, timezone
 from html import escape
@@ -73,7 +74,7 @@ IGNORED_FILES = {
 
 
 def github_api(path):
-    token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
+    token = github_token()
     req = urllib.request.Request(f"https://api.github.com{path}")
     req.add_header("Accept", "application/vnd.github+json")
     req.add_header("User-Agent", "RyanVerWey-profile-readme")
@@ -83,11 +84,38 @@ def github_api(path):
         return json.loads(response.read().decode("utf-8"))
 
 
+def github_token():
+    return (
+        os.environ.get("PROFILE_METRICS_TOKEN")
+        or os.environ.get("GH_TOKEN")
+        or os.environ.get("GITHUB_TOKEN")
+    )
+
+
+def authenticated_repo_listing_available():
+    token = github_token()
+    if not token:
+        return False
+    try:
+        github_api("/user")
+        return True
+    except urllib.error.HTTPError:
+        return False
+
+
 def list_repositories():
     repos = []
     page = 1
+    use_authenticated_listing = authenticated_repo_listing_available()
     while True:
-        batch = github_api(f"/users/{OWNER}/repos?per_page=100&page={page}&type=owner&sort=updated")
+        if use_authenticated_listing:
+            path = (
+                f"/user/repos?visibility=all&affiliation=owner"
+                f"&per_page=100&page={page}&sort=updated"
+            )
+        else:
+            path = f"/users/{OWNER}/repos?per_page=100&page={page}&type=owner&sort=updated"
+        batch = github_api(path)
         if not batch:
             break
         repos.extend(batch)
@@ -97,7 +125,6 @@ def list_repositories():
         for repo in repos
         if not repo.get("fork")
         and not repo.get("archived")
-        and not repo.get("private")
         and repo["name"] not in EXCLUDED_REPOS
     ]
 
@@ -128,10 +155,15 @@ def count_source_lines(path):
 
 def collect_lines(repo, workspace):
     repo_path = workspace / repo["name"]
-    subprocess.run(
-        ["git", "clone", "--depth", "1", "--quiet", repo["clone_url"], str(repo_path)],
-        check=True,
-    )
+    command = ["git"]
+    token = github_token()
+    if token:
+        basic_token = b64encode(f"x-access-token:{token}".encode("utf-8")).decode("ascii")
+        command.extend(["-c", f"http.https://github.com/.extraheader=AUTHORIZATION: basic {basic_token}"])
+    command.extend(["clone", "--depth", "1", "--quiet", repo["clone_url"], str(repo_path)])
+    clone_env = os.environ.copy()
+    clone_env["GIT_LFS_SKIP_SMUDGE"] = "1"
+    subprocess.run(command, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, env=clone_env)
 
     totals = Counter()
     for path in repo_path.rglob("*"):
@@ -153,7 +185,7 @@ def format_number(value):
     return f"{value:,}"
 
 
-def render_svg(totals, repo_count):
+def render_svg(totals, public_repo_count, private_repo_count):
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     total_lines = sum(totals.values())
     top = totals.most_common(9)
@@ -184,7 +216,6 @@ def render_svg(totals, repo_count):
     start_y = 184
     for index, (language, lines) in enumerate(top):
         y = start_y + index * row_height
-        percent = (lines / total_lines * 100) if total_lines else 0
         bar_w = 410 * (lines / top[0][1]) if top and top[0][1] else 0
         color = colors.get(language, "#94A3B8")
         rows.append(
@@ -193,13 +224,17 @@ def render_svg(totals, repo_count):
             f'<text x="332" y="{y}" class="value">{format_number(lines)} lines</text>'
             f'<rect x="510" y="{y - 18}" width="410" height="16" rx="8" fill="#1E293B"/>'
             f'<rect x="510" y="{y - 18}" width="{bar_w:.2f}" height="16" rx="8" fill="{color}"/>'
-            f'<text x="938" y="{y}" class="percent" text-anchor="end">{percent:.1f}%</text>'
         )
 
     updated = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    repo_summary = (
+        f"{public_repo_count} public + {private_repo_count} private active repos"
+        if private_repo_count
+        else f"{public_repo_count} public active repos"
+    )
     svg = f"""<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
   <title id="title">Ryan VerWey language distribution</title>
-  <desc id="desc">Estimated non-empty source lines by programming language across public non-archived repositories.</desc>
+  <desc id="desc">Estimated non-empty source lines by programming language across public and private active repositories. Private repositories are included only as aggregate counts.</desc>
   <defs>
     <linearGradient id="panel" x1="0" y1="0" x2="{width}" y2="{height}" gradientUnits="userSpaceOnUse">
       <stop stop-color="#07130D"/>
@@ -212,14 +247,14 @@ def render_svg(totals, repo_count):
       .meta {{ fill: #CBD5E1; font: 500 15px 'Segoe UI', Arial, sans-serif; }}
       .label {{ fill: #F8FAFC; font: 700 18px 'Segoe UI', Arial, sans-serif; }}
       .value {{ fill: #CBD5E1; font: 600 16px 'Segoe UI', Arial, sans-serif; }}
-      .percent {{ fill: #E2E8F0; font: 700 16px 'Segoe UI', Arial, sans-serif; }}
     </style>
   </defs>
   <rect width="{width}" height="{height}" rx="24" fill="url(#panel)"/>
   <rect x="1" y="1" width="{width - 2}" height="{height - 2}" rx="23" stroke="#334155"/>
   <text x="44" y="48" class="eyebrow">LANGUAGE MIX</text>
   <text x="44" y="88" class="title">{format_number(total_lines)} estimated source lines</text>
-  <text x="{width - 44}" y="86" class="meta" text-anchor="end">{repo_count} public active repos - updated {updated}</text>
+  <text x="{width - 44}" y="72" class="meta" text-anchor="end">{repo_summary}</text>
+  <text x="{width - 44}" y="94" class="meta" text-anchor="end">private repos shown as aggregate only - updated {updated}</text>
   <rect x="{chart_x}" y="{chart_y}" width="{chart_w}" height="{chart_h}" rx="8" fill="#1E293B"/>
   {''.join(segments)}
   {''.join(rows)}
@@ -230,6 +265,8 @@ def render_svg(totals, repo_count):
 
 def main():
     repos = list_repositories()
+    public_repo_count = sum(1 for repo in repos if not repo.get("private"))
+    private_repo_count = sum(1 for repo in repos if repo.get("private"))
     totals = Counter()
     with tempfile.TemporaryDirectory(prefix="language-metrics-") as temp:
         workspace = Path(temp)
@@ -237,8 +274,9 @@ def main():
             try:
                 totals.update(collect_lines(repo, workspace))
             except subprocess.CalledProcessError:
-                print(f"Skipping {repo['name']}: clone failed")
-    render_svg(totals, len(repos))
+                visibility = "private" if repo.get("private") else "public"
+                print(f"Skipping one {visibility} repository: clone failed")
+    render_svg(totals, public_repo_count, private_repo_count)
     print(f"Wrote {OUTPUT}")
 
 
