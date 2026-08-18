@@ -1,0 +1,43 @@
+<svg width="1200" height="360" viewBox="0 0 1200 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="360" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#07130D"/>
+      <stop offset="0.5" stop-color="#101827"/>
+      <stop offset="1" stop-color="#06120A"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="110" y1="55" x2="1060" y2="305" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00B324"/>
+      <stop offset="0.48" stop-color="#38BDF8"/>
+      <stop offset="1" stop-color="#A3E635"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(965 75) rotate(138) scale(470 230)">
+      <stop stop-color="#00B324" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#00B324" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="24"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="360" rx="28" fill="url(#bg)"/>
+  <rect width="1200" height="360" rx="28" fill="url(#glow)"/>
+  <g opacity="0.16">
+    <path d="M0 72H1200M0 144H1200M0 216H1200M0 288H1200" stroke="#9CA3AF"/>
+    <path d="M120 0V360M240 0V360M360 0V360M480 0V360M600 0V360M720 0V360M840 0V360M960 0V360M1080 0V360" stroke="#9CA3AF"/>
+  </g>
+  <circle cx="1010" cy="88" r="120" fill="#00B324" opacity="0.16" filter="url(#soft)"/>
+  <circle cx="100" cy="295" r="110" fill="#38BDF8" opacity="0.12" filter="url(#soft)"/>
+  <path d="M84 96C185 47 266 47 363 100C453 149 537 144 631 88C734 27 844 33 950 101C1022 148 1084 151 1140 126" stroke="url(#accent)" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+  <path d="M84 270C184 209 293 204 397 257C490 305 579 299 680 236C773 179 878 178 981 232C1047 267 1097 270 1140 252" stroke="url(#accent)" stroke-width="3" stroke-linecap="round" opacity="0.45"/>
+  <rect x="70" y="64" width="1060" height="232" rx="22" fill="#0B1220" fill-opacity="0.72" stroke="#334155"/>
+  <circle cx="112" cy="104" r="8" fill="#EF4444"/>
+  <circle cx="138" cy="104" r="8" fill="#F59E0B"/>
+  <circle cx="164" cy="104" r="8" fill="#22C55E"/>
+  <text x="92" y="155" fill="#94A3B8" font-family="Consolas, Menlo, monospace" font-size="21">RyanVerWey / README.md</text>
+  <text x="92" y="214" fill="#F8FAFC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="58" font-weight="800">Ryan VerWey</text>
+  <text x="96" y="255" fill="#CBD5E1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="25" font-weight="600">Web Developer  |  UI/UX Designer  |  Owner, Echo Effect LLC</text>
+  <text x="842" y="174" fill="#00B324" font-family="Consolas, Menlo, monospace" font-size="22">const focus = [</text>
+  <text x="872" y="209" fill="#E2E8F0" font-family="Consolas, Menlo, monospace" font-size="22">"clean UI",</text>
+  <text x="872" y="242" fill="#E2E8F0" font-family="Consolas, Menlo, monospace" font-size="22">"useful tools",</text>
+  <text x="872" y="275" fill="#E2E8F0" font-family="Consolas, Menlo, monospace" font-size="22">"fast shipping"</text>
+  <text x="842" y="308" fill="#00B324" font-family="Consolas, Menlo, monospace" font-size="22">];</text>
+</svg>
