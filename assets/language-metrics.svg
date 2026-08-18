@@ -1,0 +1,27 @@
+<svg width="980" height="566" viewBox="0 0 980 566" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Ryan VerWey language distribution</title>
+  <desc id="desc">Estimated non-empty source lines by programming language across public non-archived repositories.</desc>
+  <defs>
+    <linearGradient id="panel" x1="0" y1="0" x2="980" y2="566" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#07130D"/>
+      <stop offset="0.55" stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#06120A"/>
+    </linearGradient>
+    <style>
+      .eyebrow { fill: #94A3B8; font: 600 14px 'Segoe UI', Arial, sans-serif; letter-spacing: 1.6px; }
+      .title { fill: #F8FAFC; font: 800 34px 'Segoe UI', Arial, sans-serif; }
+      .meta { fill: #CBD5E1; font: 500 15px 'Segoe UI', Arial, sans-serif; }
+      .label { fill: #F8FAFC; font: 700 18px 'Segoe UI', Arial, sans-serif; }
+      .value { fill: #CBD5E1; font: 600 16px 'Segoe UI', Arial, sans-serif; }
+      .percent { fill: #E2E8F0; font: 700 16px 'Segoe UI', Arial, sans-serif; }
+    </style>
+  </defs>
+  <rect width="980" height="566" rx="24" fill="url(#panel)"/>
+  <rect x="1" y="1" width="978" height="564" rx="23" stroke="#334155"/>
+  <text x="44" y="48" class="eyebrow">LANGUAGE MIX</text>
+  <text x="44" y="88" class="title">39,461 estimated source lines</text>
+  <text x="936" y="86" class="meta" text-anchor="end">16 public active repos - updated 2026-08-18 16:10 UTC</text>
+  <rect x="44" y="118" width="892" height="26" rx="8" fill="#1E293B"/>
+  <rect x="44.00" y="118" width="363.53" height="26" rx="6" fill="#3178C6"/><rect x="407.53" y="118" width="249.69" height="26" rx="6" fill="#F7DF1E"/><rect x="657.22" y="118" width="114.51" height="26" rx="6" fill="#CF649A"/><rect x="771.73" y="118" width="64.24" height="26" rx="6" fill="#3776AB"/><rect x="835.97" y="118" width="49.75" height="26" rx="6" fill="#E34F26"/><rect x="885.73" y="118" width="18.06" height="26" rx="6" fill="#BC52EE"/><rect x="903.79" y="118" width="13.90" height="26" rx="6" fill="#FF3E00"/><rect x="917.69" y="118" width="10.92" height="26" rx="6" fill="#41B883"/><rect x="928.61" y="118" width="7.39" height="26" rx="6" fill="#F9AC00"/>
+  <circle cx="58" cy="178" r="7" fill="#3178C6"/><text x="78" y="184" class="label">TypeScript</text><text x="332" y="184" class="value">16,082 lines</text><rect x="510" y="166" width="410" height="16" rx="8" fill="#1E293B"/><rect x="510" y="166" width="410.00" height="16" rx="8" fill="#3178C6"/><text x="938" y="184" class="percent" text-anchor="end">40.8%</text><circle cx="58" cy="222" r="7" fill="#F7DF1E"/><text x="78" y="228" class="label">JavaScript</text><text x="332" y="228" class="value">11,046 lines</text><rect x="510" y="210" width="410" height="16" rx="8" fill="#1E293B"/><rect x="510" y="210" width="281.61" height="16" rx="8" fill="#F7DF1E"/><text x="938" y="228" class="percent" text-anchor="end">28.0%</text><circle cx="58" cy="266" r="7" fill="#CF649A"/><text x="78" y="272" class="label">CSS</text><text x="332" y="272" class="value">5,066 lines</text><rect x="510" y="254" width="410" height="16" rx="8" fill="#1E293B"/><rect x="510" y="254" width="129.15" height="16" rx="8" fill="#CF649A"/><text x="938" y="272" class="percent" text-anchor="end">12.8%</text><circle cx="58" cy="310" r="7" fill="#3776AB"/><text x="78" y="316" class="label">Python</text><text x="332" y="316" class="value">2,842 lines</text><rect x="510" y="298" width="410" height="16" rx="8" fill="#1E293B"/><rect x="510" y="298" width="72.45" height="16" rx="8" fill="#3776AB"/><text x="938" y="316" class="percent" text-anchor="end">7.2%</text><circle cx="58" cy="354" r="7" fill="#E34F26"/><text x="78" y="360" class="label">HTML</text><text x="332" y="360" class="value">2,201 lines</text><rect x="510" y="342" width="410" height="16" rx="8" fill="#1E293B"/><rect x="510" y="342" width="56.11" height="16" rx="8" fill="#E34F26"/><text x="938" y="360" class="percent" text-anchor="end">5.6%</text><circle cx="58" cy="398" r="7" fill="#BC52EE"/><text x="78" y="404" class="label">Astro</text><text x="332" y="404" class="value">799 lines</text><rect x="510" y="386" width="410" height="16" rx="8" fill="#1E293B"/><rect x="510" y="386" width="20.37" height="16" rx="8" fill="#BC52EE"/><text x="938" y="404" class="percent" text-anchor="end">2.0%</text><circle cx="58" cy="442" r="7" fill="#FF3E00"/><text x="78" y="448" class="label">Svelte</text><text x="332" y="448" class="value">615 lines</text><rect x="510" y="430" width="410" height="16" rx="8" fill="#1E293B"/><rect x="510" y="430" width="15.68" height="16" rx="8" fill="#FF3E00"/><text x="938" y="448" class="percent" text-anchor="end">1.6%</text><circle cx="58" cy="486" r="7" fill="#41B883"/><text x="78" y="492" class="label">Vue</text><text x="332" y="492" class="value">483 lines</text><rect x="510" y="474" width="410" height="16" rx="8" fill="#1E293B"/><rect x="510" y="474" width="12.31" height="16" rx="8" fill="#41B883"/><text x="938" y="492" class="percent" text-anchor="end">1.2%</text><circle cx="58" cy="530" r="7" fill="#F9AC00"/><text x="78" y="536" class="label">MDX</text><text x="332" y="536" class="value">327 lines</text><rect x="510" y="518" width="410" height="16" rx="8" fill="#1E293B"/><rect x="510" y="518" width="8.34" height="16" rx="8" fill="#F9AC00"/><text x="938" y="536" class="percent" text-anchor="end">0.8%</text>
+</svg>

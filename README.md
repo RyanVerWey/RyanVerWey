@@ -20,7 +20,7 @@
 
 ### Web Developer | UI/UX Designer | Owner, Echo Effect LLC
 
-I build practical web products, UI systems, and small tools that make real workflows easier. My repos range from cross-framework ApexUI demos to SEO utilities, image tooling, community platforms, nonprofit sites, and browser-based experiments.
+I build practical web products, UI systems, and small tools that make real workflows easier.
 
 - Based in Tampa, FL and working remote.
 - Building client-facing web experiences through [Echo Effect LLC](https://www.echoeffect.net/).
@@ -36,78 +36,11 @@ I build practical web products, UI systems, and small tools that make real workf
 
 </div>
 
-## Featured work
-
-<table>
-  <tr>
-    <td width="50%">
-      <h3><a href="https://github.com/RyanVerWey/ENVET">ENVET</a></h3>
-      <p>Eagles Nest Veteran's Equine Therapy nonprofit site.</p>
-      <p><img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=111111" alt="JavaScript" /></p>
-    </td>
-    <td width="50%">
-      <h3><a href="https://github.com/RyanVerWey/Tech-Talk">Tech-Talk</a></h3>
-      <p>Alumni networking platform with profiles, blog posts, ratings, project primers, and Google sign-in.</p>
-      <p><img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB" alt="React" /> <img src="https://img.shields.io/badge/Node-339933?style=flat-square&logo=nodedotjs&logoColor=white" alt="Node" /> <img src="https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white" alt="MongoDB" /></p>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%">
-      <h3><a href="https://github.com/RyanVerWey/Image-Coordinates">Image-Coordinates</a></h3>
-      <p>Tooling for working with image coordinate data.</p>
-      <p><img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=111111" alt="JavaScript" /></p>
-    </td>
-    <td width="50%">
-      <h3><a href="https://github.com/RyanVerWey/MindMap">MindMap</a></h3>
-      <p>Browser-based mind mapping and visualization project.</p>
-      <p><img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=111111" alt="JavaScript" /></p>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%">
-      <h3><a href="https://github.com/RyanVerWey/SEOScraper">SEOScraper</a></h3>
-      <p>SEO extraction and analysis tooling.</p>
-      <p><img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python" /></p>
-    </td>
-    <td width="50%">
-      <h3><a href="https://github.com/RyanVerWey?tab=repositories&q=apexui-demo&type=&language=&sort=">ApexUI demo lab</a></h3>
-      <p>Cross-framework component demos across React, Next, Angular, Vue, Svelte, Astro, and vanilla TypeScript.</p>
-      <p><img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" /> <img src="https://img.shields.io/badge/Astro-BC52EE?style=flat-square&logo=astro&logoColor=white" alt="Astro" /> <img src="https://img.shields.io/badge/Svelte-FF3E00?style=flat-square&logo=svelte&logoColor=white" alt="Svelte" /></p>
-    </td>
-  </tr>
-</table>
-
-## GitHub dashboard
+## Language mix
 
 <div align="center">
 
-<picture>
-  <source
-    srcset="https://github-readme-stats.vercel.app/api?username=RyanVerWey&show_icons=true&hide_border=true&rank_icon=github&theme=merko&include_all_commits=true"
-    media="(prefers-color-scheme: dark)"
-  />
-  <source
-    srcset="https://github-readme-stats.vercel.app/api?username=RyanVerWey&show_icons=true&hide_border=true&rank_icon=github&theme=default&include_all_commits=true"
-    media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
-  />
-  <img height="170" src="https://github-readme-stats.vercel.app/api?username=RyanVerWey&show_icons=true&hide_border=true&rank_icon=github&theme=default&include_all_commits=true" alt="Ryan's GitHub stats" />
-</picture>
-
-<picture>
-  <source
-    srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=RyanVerWey&layout=compact&hide_border=true&theme=merko"
-    media="(prefers-color-scheme: dark)"
-  />
-  <source
-    srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=RyanVerWey&layout=compact&hide_border=true&theme=default"
-    media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
-  />
-  <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=RyanVerWey&layout=compact&hide_border=true&theme=default" alt="Ryan's top languages" />
-</picture>
-
-<img src="https://github-readme-streak-stats.herokuapp.com?user=RyanVerWey&theme=merko&hide_border=true" alt="Ryan's GitHub streak" />
-
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=RyanVerWey&theme=github-compact&hide_border=true&area=true&custom_title=Contribution%20Activity" alt="Ryan's contribution activity graph" />
+<img src="./assets/language-metrics.svg" alt="Estimated source lines by language across public active repositories" width="100%" />
 
 </div>
 
