@@ -35,12 +35,16 @@ I build practical web products, UI systems, and small tools that make real workf
 <div align="center">
 
 <a href="https://www.echoeffect.net/optimize" title="Optimize by Echo Effect">
-  <img src="./assets/optimize-logo.png" alt="Optimize by Echo Effect" width="720" />
+  <img src="./assets/optimize-logo.png" alt="Optimize by Echo Effect" width="320" />
 </a>
 
-**Website audits for SEO, AEO, GEO, crawler access, structured data, WCAG, and ADA-readiness signals.**
-
 </div>
+
+I built [Optimize](https://www.echoeffect.net/optimize) to turn website audits into practical repair plans instead of vague scorecards. It scans public pages for SEO, AEO, GEO, crawler access, structured data, WCAG, and ADA-readiness signals, then organizes findings by what needs to be fixed and why it matters.
+
+- Built for business owners and teams who need clear next steps before investing in deeper web work.
+- Separates search readiness into SEO, answer-engine optimization, and generative-engine optimization.
+- Flags accessibility and technical issues as a triage baseline, not a fake compliance certificate.
 
 ## Skills
 
