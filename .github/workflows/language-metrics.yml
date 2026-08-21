@@ -12,20 +12,26 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    env:
+      HAS_PROFILE_METRICS_TOKEN: ${{ secrets.PROFILE_METRICS_TOKEN != '' }}
 
     steps:
       - name: Checkout profile repo
         uses: actions/checkout@v7
 
       - name: Generate language metrics SVG
+        if: env.HAS_PROFILE_METRICS_TOKEN == 'true'
+        uses: RyanVerWey/profile-language-metrics@v1
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          output_path: assets/language-metrics.svg
+          include_private: "true"
+          token: ${{ secrets.PROFILE_METRICS_TOKEN }}
+
+      - name: Keep committed private-inclusive metrics when token is missing
+        if: env.HAS_PROFILE_METRICS_TOKEN != 'true'
         run: |
-          if [ -z "$PROFILE_METRICS_TOKEN" ]; then
-            echo "PROFILE_METRICS_TOKEN is not configured; keeping the committed private-inclusive metrics."
-            exit 0
-          fi
-          python3 .github/scripts/generate_language_metrics.py
-        env:
-          PROFILE_METRICS_TOKEN: ${{ secrets.PROFILE_METRICS_TOKEN }}
+          echo "PROFILE_METRICS_TOKEN is not configured; keeping the committed private-inclusive metrics."
 
       - name: Commit updated metrics
         run: |
